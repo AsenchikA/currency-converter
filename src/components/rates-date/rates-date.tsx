@@ -3,10 +3,10 @@ import { getTodayDate } from '../../utils/index';
 
 interface IRatesDateInput {
   value: string;
-  onChange: (value: string) => void;
+  onBlur: (value: string) => void;
 }
 
-export const RatesDateInput: FunctionComponent<IRatesDateInput> = ({ value, onChange }) => {
+export const RatesDateInput: FunctionComponent<IRatesDateInput> = ({ value, onBlur }) => {
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const RatesDateInput: FunctionComponent<IRatesDateInput> = ({ value, onCh
       max={getTodayDate()}
       value={currentDate}
       onChange={useCallback((event: ChangeEvent<HTMLInputElement>) => setCurrentDate(event.target.value), [])}
-      onBlur={useCallback(() => onChange(currentDate), [currentDate])}
+      onBlur={useCallback(() => onBlur(currentDate), [currentDate])}
     />
   );
 };

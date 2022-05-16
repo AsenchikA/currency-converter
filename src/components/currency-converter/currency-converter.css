@@ -1,0 +1,16 @@
+.currency-converter {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+
+  &__source-amount,
+  &__base-currency,
+  &__text,
+  &__result-amount {
+    margin-right: 10px;
+  }
+
+  &__result-currency {
+    align-self: stretch;
+  }
+}

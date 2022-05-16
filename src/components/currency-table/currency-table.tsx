@@ -10,10 +10,9 @@ import classNames from 'classnames';
 import styles from './currency-table.css';
 import { SortingIcon } from '@components/sorting-icon/sorting-icon';
 import { Loader } from '@components/loader/loader';
-import { ESortOrder, IRootState, ISortColumnName } from '@models/index';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
+import { ESortOrder, ISortColumnName, TDispatch } from '@models/index';
 import { setSortState } from '@store/action-creators/currency-table';
+import { formatMoney } from '@utils/index';
 
 interface ICurrencyTableProps {
   containerClassName?: string;
@@ -25,7 +24,7 @@ export const CurrencyTable: FunctionComponent<ICurrencyTableProps> = ({ containe
   const sortColumn = useSelector(selectSortColumn);
   const sortOrder = useSelector(selectSortOrder);
 
-  const dispatch = useDispatch<ThunkDispatch<IRootState, any, AnyAction>>();
+  const dispatch = useDispatch<TDispatch>();
 
   const handleSortIconClick = (newSortColumn: ISortColumnName) => {
     if (newSortColumn !== sortColumn) {
@@ -57,7 +56,7 @@ export const CurrencyTable: FunctionComponent<ICurrencyTableProps> = ({ containe
 
     return (
       <div className={styles['table-overlay']}>
-        <Loader className={styles['table-loader']} />;
+        <Loader className={styles['table-loader']} />
       </div>
     );
   };
@@ -96,8 +95,8 @@ export const CurrencyTable: FunctionComponent<ICurrencyTableProps> = ({ containe
         <tbody>
           {Object.entries(rates).map((entry) => (
             <tr key={entry[0]}>
-              <td>{entry[0]}</td>
-              <td>{entry[1].toFixed(2)}</td>
+              <td data-id={entry[0]}>{entry[0]}</td>
+              <td>{formatMoney(entry[1])}</td>
             </tr>
           ))}
         </tbody>

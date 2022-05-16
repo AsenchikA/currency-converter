@@ -1,4 +1,6 @@
 import { store } from '@store/index';
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 
 export enum ESortOrder {
   UNDEFINED,
@@ -29,3 +31,5 @@ export interface IGetLatestResponse {
 }
 
 export type IRootState = ReturnType<typeof store.getState>;
+
+export type TDispatch = ThunkDispatch<IRootState, any, AnyAction>;
