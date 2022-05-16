@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { getTodayDate } from '../../utils/index';
+import styles from './rates-date.css';
 
 interface IRatesDateInput {
   value: string;
@@ -17,6 +18,7 @@ export const RatesDateInput: FunctionComponent<IRatesDateInput> = ({ value, onBl
 
   return (
     <input
+      className={styles.datepicker}
       type="date"
       max={getTodayDate()}
       value={currentDate}

@@ -19,7 +19,7 @@ export const CurrencyConverter: FunctionComponent<ICurrencyConverterProps> = ({ 
 
   useEffect(() => {
     convertSum();
-  }, [sourceAmount, resultCurrency]);
+  }, [sourceAmount, resultCurrency, baseCurrency]);
 
   const convertSum = () => {
     if (rates === null) {

@@ -94,7 +94,7 @@ export const CurrencyTable: FunctionComponent<ICurrencyTableProps> = ({ containe
         </thead>
         <tbody>
           {Object.entries(rates).map((entry) => (
-            <tr key={entry[0]}>
+            <tr className={styles['table__row']} key={entry[0]}>
               <td data-id={entry[0]}>{entry[0]}</td>
               <td>{formatMoney(entry[1])}</td>
             </tr>

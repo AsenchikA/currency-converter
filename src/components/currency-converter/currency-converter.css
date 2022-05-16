@@ -13,4 +13,10 @@
   &__result-currency {
     align-self: stretch;
   }
+
+  &__source-amount {
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+  }
 }
