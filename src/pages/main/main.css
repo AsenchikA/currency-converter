@@ -1,0 +1,30 @@
+.base-currency-container,
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  &__caption {
+    margin-right: 20px;
+  }
+}
+
+.app-container {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  &__table {
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+}
+
+.table-settings {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}

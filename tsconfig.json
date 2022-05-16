@@ -8,6 +8,13 @@
     "jsx": "react",
     "sourceMap": true,
     "esModuleInterop": true,
+    "paths": {
+      "@api/*": ["./src/api/*"],
+      "@components/*": ["./src/components/*"],
+      "@store/*": ["./src/store/*"],
+      "@models/*": ["src/models/*"],
+      "@utils/*": ["src/utils/*"]
+    }
   },
   "include": ["./src/**/*", "webpack"]
 }

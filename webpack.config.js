@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
@@ -47,6 +47,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              esModule: false,
               modules: {
                 localIdentName: '[name]__[local]--[hash:base64:5]',
               },
@@ -88,7 +89,13 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {},
+    alias: {
+      '@api': path.resolve(__dirname, 'src/api'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@store': path.resolve(__dirname, 'src/store'),
+      '@models': path.resolve(__dirname, 'src/models'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [

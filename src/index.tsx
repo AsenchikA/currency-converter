@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import { Provider } from 'react-redux';
 import { App } from './app';
-import { configureStore } from './store';
-
-const store = configureStore();
+import { store } from './store';
 
 const rootElement = document.getElementById('root');
 
