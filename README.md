@@ -2,6 +2,8 @@
 
 ## Task
 
+Test assignment
+
 Implement a single-page application for working with exchange rates.
 
 The application must contain 2 parts:
