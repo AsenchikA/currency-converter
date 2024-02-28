@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 20px;
+  background-color: #fff;
+  box-shadow: rgb(35 55 80 / 30%) 0 6px 12px;
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+}
+
+.converter-item {
+  width: 100%;
+}
+
+.converter-item-field {
+  width: 100%;
+}
+
+@media (width >= 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 1000px;
+    row-gap: 0;
+    column-gap: 16px;
+  }
+}

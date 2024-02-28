@@ -1,11 +1,11 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "main.[contenthash].js",
+    path: path.join(__dirname, '/dist'),
+    filename: 'main.[contenthash].js',
     clean: true,
   },
   module: {
@@ -14,7 +14,7 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader"
+          loader: 'ts-loader',
         },
       },
       {
@@ -24,19 +24,21 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-            }
+              modules: {
+                localIdentName: '[local]__[hash:base64:10]',
+              },
+            },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: ['cssnano'],
               },
               sourceMap: true,
             },
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -45,25 +47,29 @@ module.exports = {
           'style-loader',
           'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: ['cssnano'],
               },
               sourceMap: true,
             },
-          }
-        ]
-      }
-    ]
+          },
+        ],
+      },
+    ],
   },
   resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@utils': path.resolve(__dirname, 'src/utils/'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    })
+      template: './src/index.html',
+    }),
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
@@ -72,4 +78,4 @@ module.exports = {
     host: 'localhost',
     hot: true,
   },
-}; 
+};
