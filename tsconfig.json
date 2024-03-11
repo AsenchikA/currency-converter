@@ -11,7 +11,10 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@store/*": ["store/*"],
       "@utils/*": ["utils/*"],
+      "@custom-types/*": ["custom-types/*"]
     },
   },
   "include": ["./src/**/*"]

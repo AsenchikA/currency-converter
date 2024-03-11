@@ -1,0 +1,78 @@
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgb(35 55 80 / 30%) 0 6px 12px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 510px);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.cell {
+  padding: 10px;
+  background-color: #fff;
+  width: 50%;
+}
+
+.row:hover .cell {
+  background-color: #e9edff;
+}
+
+.currency-cell {
+  cursor: pointer;
+}
+
+.header-cell {
+  cursor: pointer;
+}
+
+.cell-sorted {
+  position: relative;
+}
+
+.cell-sorted::before,
+.cell-sorted::after {
+  position: absolute;
+  content: '';
+  background-color: black;
+  height: 1px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: 0.4s;
+  width: 7px;
+}
+
+.cell-sorted::before {
+  right: 14px;
+}
+
+.cell-sorted::after {
+  right: 19px;
+}
+
+.cell-sorted-ascending::before {
+  transform: rotate(45deg);
+}
+
+.cell-sorted-ascending::after {
+  transform: rotate(-45deg);
+}
+
+.cell-sorted-descending::before {
+  transform: rotate(-45deg);
+}
+
+.cell-sorted-descending::after {
+  transform: rotate(45deg);
+}

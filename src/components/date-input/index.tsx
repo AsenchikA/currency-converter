@@ -1,3 +1,9 @@
 import React, { FC, InputHTMLAttributes } from 'react';
 
-export const DateInput: FC<InputHTMLAttributes<HTMLInputElement>> = (props) => <input {...props} type="date" />;
+import classNames from 'classNames';
+
+import styles from './styles.module.css';
+
+export const DateInput: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className, ...props }) => (
+  <input {...props} className={classNames(styles.input, className)} type="date" />
+);

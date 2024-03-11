@@ -1,6 +1,16 @@
-# Basic webpack boilerplate
+# Basic currency converter
 
 ## Usage
+
+## Running locally
+
+1. Install dependencies
+
+2. Get a key on [API site](https://apilayer.com/marketplace/exchangerates_data-api)
+
+3. Set your API Access Key in `.env` like it is shown in `.env.example`
+
+4. Start development server
 
 ### Development server
 
